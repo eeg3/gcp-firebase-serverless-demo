@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Firebase Serverless Demo</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container theme-showcase" role="main">
+
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+            <a class="navbar-brand" href="/">Firebase Serverless Demo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa fa-user"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item signinAction unauthenticated">Sign-In</a>
+                            <a href="#" class="dropdown-item signoutAction authenticated">Sign Out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+
+        <!-- Firebase Auth -->
+        <div class="row">
+            <div class="col">
+
+                <!-- Login card -->
+                <div id="signed-out-card" class="card border-dark unauthenticated">
+                    <div class="card-header bg-primary text-white">
+                        Login
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            This web application demonates Firebase's <a href="https://firebase.google.com/products/hosting">Hosting</a>, <a href="https://firebase.google.com/products/auth/">Authentication</a>, and <a href="https://firebase.google.com/products/functions/">Cloud Functions</a> capabilities.
+                            <strong>Now sign in!</strong>
+                        </p>
+                        <button id="sign-in-button" class="btn btn-primary signinAction">Sign in with Google</button>
+                    </div>
+                </div>
+
+                <!-- User details card -->
+                <div id="user-details-card" class="card border-dark authenticated">
+                    <div class="card-header bg-primary text-white">
+                        User Details
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Display Name:
+                            <span id="displayName">...</span>
+                            <br> Email:
+                            <span id="email">...</span>
+                            <br> Email Verified:
+                            <span id="emailVerified">...</span>
+                            <br> Photo URL:
+                            <span id="photoURL">...</span>
+                            <br> Is Anonymous:
+                            <span id="isAnonymous">...</span>
+                            <br> UID:
+                            <span id="uid">...</span>
+                            <br> Provider Data:
+                            <span id="providerData">...</span>
+                            <br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Function card -->
+                <div id="signed-in-card" class="card border-dark mt-2 authenticated">
+                    <div class="card-header bg-primary text-white">
+                        Google Cloud Function
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Sending XHR with "Authorization" header to:
+                            <br>
+                            <span id="url"></span>
+                            <br>
+                            <br> Response:
+                            <span id="response">...</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- /container -->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    <script src="/__/firebase/4.9.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="/__/firebase/4.9.0/firebase-auth.js"></script>
+    <script src="/__/firebase/4.9.0/firebase-database.js"></script>
+    <script src="/__/firebase/4.9.0/firebase-messaging.js"></script>
+    <script src="/__/firebase/4.9.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

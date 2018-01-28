@@ -1,0 +1,14 @@
+html,
+body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+.authenticated,
+.unauthenticated {
+  display: none;
+}
+
+#url,
+#response {
+  font-weight: bold;
+}
