@@ -10,10 +10,12 @@ The Hosting site with code in the [public](public) directory lets you sign-in wi
 
  1. Create a Firebase Project using the [Firebase Console](https://console.firebase.google.com).
  1. Enable the **Google** Provider in the **Auth** section.
+ 1. Ensure that the **Support Email** within the Firebase **Project Settings** is configured, or authentication will fail with a 'restricted_client' error.
  1. Clone or download this repo.
  1. You must have the Firebase CLI installed. If you don't have it install it with `npm install -g firebase-tools` and then configure it with `firebase login`.
  1. Configure the CLI locally by using `firebase use --add` and select your project in the list.
  1. Install dependencies locally by running: `cd functions; npm install; cd -`
+
 
 
 ## Deploy and test
